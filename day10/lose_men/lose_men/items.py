@@ -1,0 +1,18 @@
+# Define here the models for your scraped items
+#
+# See documentation in:
+# https://docs.scrapy.org/en/latest/topics/items.html
+
+import scrapy
+
+
+class LoseMenItem(scrapy.Item):
+    # define the fields for your item here like:
+    name = scrapy.Field()
+    cardNum = scrapy.Field()
+    areaName = scrapy.Field()
+    courtName = scrapy.Field()
+    gistId = scrapy.Field()
+    duty = scrapy.Field()
+    performance = scrapy.Field()
+

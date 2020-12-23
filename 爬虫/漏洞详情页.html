@@ -1,0 +1,657 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>国家信息安全漏洞共享平台</title>
+    <script type="text/javascript" src="/js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="/js/echarts.min.js"></script>
+    <link href="/css/common.css" rel="stylesheet" media="screen" type="text/css" />
+    <link href="/js/jquery-mega-drop-down-menu/css/skins/white.css" rel="stylesheet" type="text/css" />
+    <link href="/js/jquery-mega-drop-down-menu/css/dcmegamenu.css" rel="stylesheet" type="text/css" />
+    <link type="text/css" media="screen" rel="stylesheet"	href="/uploadify/css/uploadify.css" />
+    <script type='text/javascript' src='/js/jquery-mega-drop-down-menu/js/jquery.hoverIntent.minified.js'></script>
+    <script type='text/javascript' src='/js/jquery-mega-drop-down-menu/js/jquery.dcmegamenu.1.3.3.js'></script>
+    <link href="/css/pixie.css" rel="stylesheet" media="screen" type="text/css" />
+    <link href="/css/uc.css" rel="stylesheet" media="screen" type="text/css" />
+    <link href="/css/t_tab.css" rel="stylesheet" media="screen" type="text/css" />
+    <link href="/css/jquery-ui-custom.css" rel="stylesheet" media="screen" type="text/css" />
+    <link rel="stylesheet" href="/css/uploader.css" />
+    <link rel="stylesheet" href="/css/imgareaselect-default.css" />
+    <link href="/js/showLoading/css/showLoading.css" rel="stylesheet" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/verifyMaster/css/verify.css">
+    <script type="text/javascript" src="/js/showLoading/js/jquery.showLoading.js"></script>
+
+    <script type="text/javascript" src="/js/jquery.fancybox-1.3.4/ett/jquery.fancybox-1.3.4.pack.js"></script>
+    <link rel="stylesheet" type="text/css" href="/js/jquery.fancybox-1.3.4/ett/jquery.fancybox-1.3.4.css" media="screen" />
+    <script type="text/javascript"	src="/uploadify/scripts/swfobject.js"></script>
+    <script type="text/javascript"	src="/uploadify/scripts/jquery.uploadify.v2.1.0.js"></script>
+    <script type="text/javascript" src="/js/CryptoJS v3.1.2/rollups/aes.js"></script>
+    <script type="text/javascript" src="/js/CryptoJS v3.1.2/components/mode-ecb.js"></script>
+    <script type="text/javascript" src="/js/login.js"></script>
+    <script type="text/javascript" src="/verifyMaster/js/verify.js"></script>
+    <script  type="text/javascript">
+        $.fn.extend({
+            cancelBox: function(){
+                $.fancybox.close();
+                return false;
+            }
+        });
+    </script>
+    <script type="text/javascript" src="/js/jquery-ui.min-nopacker.js"></script>
+    <script type="text/javascript" src="/js/jquery.validate.js"></script>
+    <script type="text/javascript" src="/js/jquery.metadata.js"></script>
+    <script type="text/javascript" src="/js/jquery.bgiframe-2.1.2.js"></script>
+    <script type="text/javascript" src="/js/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="/js/jquery.ui.rcarousel.js"></script>
+    <script type="text/javascript" src="/js/jquery.imgareaselect.min.js"></script>
+    <script type="text/javascript" src="/js/t_tab.js"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="layout" content="main"/>
+    <link href="/css/main.css" rel="stylesheet" media="screen" type="text/css" />
+    <style type="text/css">
+        .tab2{border-collapse:collapse;	line-height: 1.4em;}
+        .tab2 th,.tab2 td{padding-top:2px;vertical-align:top;}
+        .tab2 th{text-align: right;}
+        .m_a {margin: 0 auto;}
+        .w120{width:150px;}
+    </style>
+
+    <r:layoutResources></r:layoutResources>
+</head>
+<body>
+<div class="wrap">
+    <div class="mw newheader">
+        <div style="float:right;padding:10px;color:#FFFFFF;font-size:14px;font-family:Arial,sans-serif;">
+
+            <a href="/user/login">登录</a>&nbsp;&nbsp;<a href="/user/regist">免费注册</a>
+
+        </div>
+    </div>
+
+    <div class="white" style="z-index: 999;">
+        <ul id="mega-menu-9" class="mega-menu" style="z-index: 999;">
+            <li><a href="/" class="">首页</a></li>
+            <li><a href="/webinfo/list?type=1" class="" =="webInfo">热点关注</a>
+                <ul>
+                    <li><a href="/webinfo/list?type=1">热点推荐</a></li>
+                    <li><a href="/webinfo/list?type=2">热点新闻</a></li>
+                </ul>
+            </li>
+            <li><a href="/flaw/list.htm">漏洞列表</a>
+                <ul>
+                    <li><a href="javascript:void(0);">应用漏洞</a>
+                        <ul>
+
+                            <li><a href="/flaw/typelist?typeId=27">操作系统</a></li>
+
+                            <li><a href="/flaw/typelist?typeId=28">应用程序</a></li>
+
+                            <li><a href="/flaw/typelist?typeId=29">WEB应用</a></li>
+
+                            <li><a href="/flaw/typelist?typeId=30">数据库</a></li>
+
+                            <li><a href="/flaw/typelist?typeId=31">网络设备（交换机、路由器等网络端设备）</a></li>
+
+                            <li><a href="/flaw/typelist?typeId=32">安全产品</a></li>
+
+                            <li><a href="/flaw/typelist?typeId=33">智能设备（物联网终端设备）</a></li>
+
+                            <li><a href="/flaw/typelist?typeId=34">区块链公链</a></li>
+
+                            <li><a href="/flaw/typelist?typeId=35">区块链联盟链</a></li>
+
+                            <li><a href="/flaw/typelist?typeId=36">区块链外围系统</a></li>
+
+                            <li><a href="/flaw/typelist?typeId=37">车联网</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);">行业漏洞</a>
+                        <ul>
+
+
+
+                            <li>
+
+                                <a href="https://telecom.cnvd.org.cn/" target="_blank">
+                                    电信
+                                </a>
+                            </li>
+
+                            <li>
+
+                                <a href="https://mi.cnvd.org.cn/" target="_blank">
+                                    移动互联网
+                                </a>
+                            </li>
+
+                            <li>
+
+                                <a href="https://ics.cnvd.org.cn/" target="_blank">
+                                    工控系统
+                                </a>
+                            </li>
+
+                            <li>
+
+                                <a href="https://bc.cnvd.org.cn/" target="_blank">
+                                    区块链
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="/patchInfo/list">补丁信息</a></li>
+            <li><a href="/webinfo/list?type=14">安全公告</a></li>
+            <li><a href="javascript:void(0);">统计查询</a>
+                <ul>
+                    <li><a href="/flaw/statistic">统计数据</a></li>
+                    <li><a href="/flaw/list.htm?flag=ture">高级搜索</a></li>
+                    <li><a href="/shareData/list">共享数据</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0);">研究报告</a>
+                <ul>
+                    <li><a href="/webinfo/list?type=4">周报</a></li>
+                    <li><a href="/webinfo/list?type=5">月报</a></li>
+                    <li><a href="/webinfo/list?type=6">知识库</a></li>
+                </ul>
+            </li>
+            <li><a href="#">工作体系</a>
+                <ul>
+                    <li><a href="/webinfo/list?type=7">CNVD简介</a></li>
+                    <li><a href="/webinfo/list?type=15">加入CNVD</a></li>
+                    <li><a href="/webinfo/list?type=16">CNVD奖励计划</a></li>
+                    <li><a href="/webinfo/list?type=12">CNVD秘书处</a></li>
+                    <li><a href="/webinfo/list?type=10">CNVD技术组</a></li>
+                    <li><a href="/webinfo/list?type=11">CNVD用户组</a></li>
+                    <li><a href="/webinfo/list?type=13">CNVD合作方</a></li>
+                    <!--
+                    <li><a href="/user/userList">白帽子</a></li>
+                    -->
+                </ul>
+            </li>
+            <li><a href="/sheepWall/list"> 绵羊墙</a>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        $().ready(function(){
+            $('#mega-menu-9').dcMegaMenu({
+                rowItems: '3',
+                speed: 'fast',
+                effect: 'fade'
+            });
+        });
+    </script>
+
+</div>
+<script type="text/javascript">
+    $('#mega-menu-9').dcMegaMenu({
+        rowItems: '3',
+        speed: 'fast',
+        effect: 'fade'
+    });
+</script>
+<div class="top_btn" style="display:none;">
+    <a class="topLink" href="javascript:void(0);" title="回到顶部"></a>
+</div>
+
+<div class="mw path">
+    当前位置：<a href="/">首页</a> &gt; 漏洞详细信息
+</div>
+
+<!-- 主体内容开始 -->
+<div class="mw Main clearfix">
+    <div class="blkContainer">
+        <div class="blkContainerPblk">
+            <div class="blkContainerSblk">
+                <h1 >Google TensorFlow输入验证错误漏洞（CNVD-2020-54472）</h1>
+                <div class="artInfo" style="padding-left:30px;text-align:left;">
+							<span title="关注此漏洞" style="float:right;cursor:pointer;margin-right:20px;" onclick="concernFlaw('2464960')" id="concernInfo">
+								<img style="vertical-align:middle;" src="/images/guanzhu.png"/>&nbsp;关注(0)
+							</span>
+                    <span>&nbsp</span>
+                </div>
+                <div class="blkContainerSblkCon clearfix">
+                    <div class="tableDiv">
+                        <table class="gg_detail">
+                            <colgroup>
+                                <col class="fir_col">
+                                <col class="sec_col">
+                            </colgroup>
+                            <tbody>
+                            <tr >
+                                <td class="alignRight">CNVD-ID</td>
+                                <td>
+                                    CNVD-2020-54472
+                                </td>
+                            </tr>
+                            <tr >
+                                <td class="alignRight">公开日期</td>
+                                <td>
+                                    2020-09-29
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="alignRight">危害级别</td>
+                                <td class="denle">
+
+
+
+                                    <span class="red showInfo" ></span>
+
+                                    高
+
+
+                                    (<a href="#showDiv" class="showInfo">AV:N/AC:L/Au:N/C:N/I:N/A:C</a>)
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="alignRight">影响产品</td>
+                                <td>
+
+
+                                    Google TensorFlow &lt;1.15.4<br/>
+
+                                    Google TensorFlow 2.0.3<br/>
+
+                                    Google TensorFlow 2.1.2<br/>
+
+                                    Google TensorFlow 2.2.1<br/>
+
+                                    Google TensorFlow 2.3.1<br/>
+
+
+                                </td>
+                            </tr>
+
+
+
+
+
+
+                            <tr>
+                                <td class="alignRight">CVE ID</td>
+                                <td>
+
+                                    <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15203" target="_blank">CVE-2020-15203 </a><br>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="alignRight">漏洞描述</td>
+                                <td>
+
+
+                                    Google TensorFlow是美国谷歌（Google）公司的一套用于机器学习的端到端开源平台。<br/>
+
+                                    <br/>
+
+                                    Tensorflow 1.15.4之前版本, 2.0.3版本, 2.1.2版本, 2.2.1版本，2.3.1版本中存在安全漏洞，攻击者可以利用该漏洞触发格式字符串漏洞。 <br/>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="alignRight">漏洞类型</td>
+                                <td>
+
+                                    通用型漏洞
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="alignRight">参考链接</td>
+                                <td>
+
+
+
+                                    <a href="https://nvd.nist.gov/vuln/detail/CVE-2020-15203">https://nvd.nist.gov/vuln/detail/CVE-2020-15203</a><br/>
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="alignRight">漏洞解决方案</td>
+                                <td>
+
+
+                                    目前厂商已发布升级补丁以修复漏洞，补丁获取链接：
+                                    <br/>
+
+                                    https://github.com/tensorflow/tensorflow/releases/tag/v2.3.1 <br/>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="alignRight">厂商补丁</td>
+                                <td>
+
+
+                                    <a href="/patchInfo/show/235786">Google TensorFlow输入验证错误漏洞（CNVD-2020-54472）的补丁</a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="alignRight">验证信息</td>
+                                <td>
+
+                                    (暂无验证信息)
+                                </td>
+                            </tr>
+                            <tr >
+                                <td class="alignRight">报送时间</td>
+                                <td>
+                                    2020-09-28
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="alignRight">收录时间</td>
+                                <td>
+                                    2020-09-29
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="alignRight">更新时间</td>
+                                <td>
+                                    2020-09-29
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="alignRight">漏洞附件</td>
+                                <td>
+
+
+                                    (无附件)
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">&nbsp;&nbsp;在发布漏洞公告信息之前，CNVD都力争保证每条公告的准确性和可靠性。然而，采纳和实施公告中的建议则完全由用户自己决定，其可能引起的问题和结果也完全由用户承担。是否采纳我们的建议取决于您个人或您企业的决策，您应考虑其内容是否符合您个人或您企业的安全策略和流程。
+                                </td>
+                            </tr>
+                            </tbody></table>
+                    </div>
+                    <div style="font-size: 0px; height: 0px; clear: both;"></div>
+                    <div class="show_author">
+                        （编辑：CNVD）&nbsp;|&nbsp;<img src="/images/pinglun.png" style="vertical-align:middle;"/>已有0条评论
+                    </div>
+                </div>
+            </div>
+
+            <div class="content_line"></div>
+        </div>
+        <div class="sp15"></div>
+        <div id="J_Comment_Wrap" class="blkContainerCommentblk" >
+            <a name="commentList"></a>
+            <form action="/flawComments/save/post_form_inline" method="post" name="post_form_inline" id="post_form_inline" >
+                <input type="hidden" name="org.codehaus.groovy.grails.SYNCHRONIZER_TOKEN" value="c50c3edb-fe7b-4d71-9376-0be08a25fd46" id="org.codehaus.groovy.grails.SYNCHRONIZER_TOKEN" />
+                <input type="hidden" name="org.codehaus.groovy.grails.SYNCHRONIZER_URI" value="/flaw/show/CNVD-2020-54472" id="org.codehaus.groovy.grails.SYNCHRONIZER_URI" />
+
+                <div class="Mblk_cmnt blkCommentBox" style="position: relative;">
+                    <div id="J_Comment_Form_B" class="post_box post_box_top post_box_showall" style="position: static; left: 0px; margin-left: 0px;">
+
+                        <div><a href="/user/login">登录</a> 后才能发表评论</div>
+
+                    </div>
+                </div>
+            </form>
+
+            <a name="comment"></a>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="blk_01">
+            <div class="bc clearfix">
+                <div class="tit tit_02">
+                    <h2>相关漏洞</h2>
+                    <span style="float:right;padding:9px 0 0 13px;">
+								<a href="/flaw/flawListByManu/47237">
+									更多>>
+								</a>
+							</span>
+                </div>
+                <ul class="cc_list_01">
+
+
+
+                    <li><a href="/flaw/show/CNVD-2020-54474" title="Google TensorFlow输入验证错误漏洞">
+
+                        Google TensorFlow输入验证错误漏洞
+
+                    </a></li>
+
+                    <li><a href="/flaw/show/CNVD-2020-54473" title="Google TensorFlow代码问题漏洞（CNVD-2020-54473）">
+
+                        Google TensorFlow代码问题漏洞（CNVD-2020-5447...
+
+                    </a></li>
+
+                    <li><a href="/flaw/show/CNVD-2020-54471" title="Google Android缓冲区溢出漏洞（CNVD-2020-54471）">
+
+                        Google Android缓冲区溢出漏洞（CNVD-2020-54471...
+
+                    </a></li>
+
+                    <li><a href="/flaw/show/CNVD-2020-54065" title="Google Android Media Framework信息泄露漏洞（CNVD-2020-54065）">
+
+                        Google Android Media Framework信息泄露漏洞（C...
+
+                    </a></li>
+
+                    <li><a href="/flaw/show/CNVD-2020-54066" title="Google Android Framework信息泄露漏洞（CNVD-2020-54066）">
+
+                        Google Android Framework信息泄露漏洞（CNVD-20...
+
+                    </a></li>
+
+                    <li><a href="/flaw/show/CNVD-2020-54064" title="Google Android Kernel组件权限提升漏洞（CNVD-2020-54064）">
+
+                        Google Android Kernel组件权限提升漏洞（CNVD-2...
+
+                    </a></li>
+
+                    <li><a href="/flaw/show/CNVD-2020-54067" title="Google Android Framework信息泄露漏洞（CNVD-2020-54067）">
+
+                        Google Android Framework信息泄露漏洞（CNVD-20...
+
+                    </a></li>
+
+                    <li><a href="/flaw/show/CNVD-2020-54068" title="Google Android Framework信息泄露漏洞（CNVD-2020-54068）">
+
+                        Google Android Framework信息泄露漏洞（CNVD-20...
+
+                    </a></li>
+
+                    <li><a href="/flaw/show/CNVD-2020-54063" title="Google Android Kernel组件信息泄露漏洞（CNVD-2020-54063）">
+
+                        Google Android Kernel组件信息泄露漏洞（CNVD-2...
+
+                    </a></li>
+
+                    <li><a href="/flaw/show/CNVD-2020-54069" title="Google Android Framework信息泄露漏洞（CNVD-2020-54069）">
+
+                        Google Android Framework信息泄露漏洞（CNVD-20...
+
+                    </a></li>
+
+
+                </ul>
+            </div>
+        </div>
+        <div class="sp15"></div>
+        <div class="blk_01">
+            <div class="bc clearfix">
+                <div class="weibo" style="float:left;padding:11px 0 5px;">
+                    <div class="clf">
+                        <a href="/flaw/create">
+                            <img style="border:medium none;" height="70" width="320" alt="漏洞报送" src="/images/loudongbaosong.jpg"/>
+                        </a>
+                    </div>
+                    <div class="sp15"></div>
+                    <div class="clf">
+                        <a href="/certificate/certificate_search">
+                            <img style="border:medium none;" height="70" width="320" alt="证书查询" src="/images/zhengshuchaxun.jpg"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 主体内容结束 -->
+<div id="showDiv" style="display:none;width: 300px;height: 170px;padding-top: 20px;padding-left:20px;font-size: 14px;line-height: 1.5em;background-color: #F2F4FF"  style="">
+
+
+    <table cellspacing="0" cellpadding="0" border="0" class="tab2 m_a">
+        <colgroup span="2" class="w120"></colgroup>
+        <tbody><tr>
+            <td><span style="font-weight: bold;color: #014ABB;" >攻击途径：</span>远程网络</td>
+            <td><span style="font-weight: bold;color: #014ABB;">攻击复杂度：</span>低</td>
+        </tr>
+        <tr>
+            <td><span style="font-weight: bold;color: #014ABB;">认证：</span>不需要认证</td>
+            <td><span style="font-weight: bold;color: #014ABB;">机密性：</span>不受影响</td>
+        </tr>
+        <tr>
+            <td><span style="font-weight: bold;color: #014ABB;">完整性：</span>不受影响</td>
+            <td><span style="font-weight: bold;color: #014ABB;">可用性：</span>完全地</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <div style="text-align: center;font-size: 19px;">漏洞评分 ：7.8</div>
+
+
+</div>
+<script type="text/javascript">
+    function remarkFlaw(){
+        var val = $("#remarkContent").val();
+        if(val == ""){
+            return false;
+        }
+        $("#post_form_inline").submit();
+    }
+    function displayReply(trId) {
+        if(!$("#sessionUserId").val()) {
+            document.forms[0].action='/TUser/login';
+            document.forms[0].submit();
+        } else {
+            var replyObj = document.getElementById(trId + "reply")
+            if(!replyObj) {
+                var trObj = $('#' + trId);
+                var str = "<p id='"+trId+"reply' class='replyP'><textarea class='box' cols='50' rows='2' name='reply'></textarea><br/><a href='javascript:void(0);' class='btn b_28_1' onClick='addReply(" + trId.substring(2) + ")'><span>立即回复</span></a>&nbsp;&nbsp;<a href='javascript:void(0);' onclick='cancelReply(this)'>取消</a></p>"
+                trObj.after(str);
+            }
+        }
+    }
+    function cancelReply(aObj) {
+        $("#parentCommentId").val('');
+        var trObj = $(aObj).parent();
+        trObj.remove();
+    }
+    function concernFlaw(flawId) {
+        if(!$("#sessionUserId").val()) {
+            document.forms[0].action='/TUser/login';
+            document.forms[0].submit();
+        } else {
+            $('#concernInfo').load("/flawConcern/concernFlaw?t="+new Date().getTime()+"&flawId="+flawId);
+        }
+    }
+    function addReply(value){
+        $("#parentCommentId").val(value);
+        var v = $("textarea[name=reply]").val();
+        if(v==''){return false;}else{$("#post_form_inline").submit();}
+    }
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        /*
+         *  Simple image gallery. Uses default settings
+         */
+        $(".showInfo").click(function(){
+            $("#showDiv").show();
+        });
+
+        $(".showInfo").fancybox({
+            centerOnScroll:true,
+            href:'#showDiv',
+            overlayOpacity:0,
+            padding:0,
+            margin:0,
+            onClosed:function(){
+                $("#showDiv").hide();
+            }
+        });
+        var msg = "";
+        if(msg.length > 0){window.location.href="#comment";}
+    });
+</script>
+<!-- Baidu Button END -->
+
+<r:layoutResources></r:layoutResources>
+
+<!-- footer -->
+<style type="text/css">
+    .footer{
+        background-color:#1362bd;
+        margin: 10px auto;
+        padding: 30px 0px;
+        position: relative;
+        width: 1000px;
+        font:14px Microsoft YaHei;
+        font-weight:400;
+        color:#FFF;
+    }
+    .footer address {
+        font-style: normal;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+    }
+</style>
+<div class="footer">
+    <address>Copyright (c) 2010 国家计算机网络应急技术处理协调中心 版权所有</address>
+    <address>Email：vreport@cert.org.cn 联系电话：010-82991537</address>
+    <address>京ICP备10012421号</address>
+    <address>网站由知道创宇公司加速乐产品提供访问优化服务</address>
+    <address>技术支持：<a href="http://eversec.com.cn/" style="color: white;">恒安嘉新（北京）科技股份公司</a></address>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        $(window).scroll(function(){
+            var scrollTop = $(document).scrollTop();
+            if(scrollTop > 0){
+                $(".top_btn").show();
+            }else{
+                $(".top_btn").hide();
+            }
+        });
+        $(".topLink").click(function(){
+            $('body,html').animate({scrollTop:0},1000);
+        });
+    });
+</script>
+<!-- Baidu Button BEGIN
+<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=8&amp;pos=right&amp;uid=6537022" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+var bds_config={"bdTop":195};
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>
+ -->
+</body>
+</html>

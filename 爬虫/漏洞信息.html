@@ -1,0 +1,1408 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>国家信息安全漏洞共享平台</title>
+    <script type="text/javascript" src="/js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="/js/echarts.min.js"></script>
+    <link href="/css/common.css" rel="stylesheet" media="screen" type="text/css"/>
+    <link href="/js/jquery-mega-drop-down-menu/css/skins/white.css" rel="stylesheet" type="text/css"/>
+    <link href="/js/jquery-mega-drop-down-menu/css/dcmegamenu.css" rel="stylesheet" type="text/css"/>
+    <link type="text/css" media="screen" rel="stylesheet" href="/uploadify/css/uploadify.css"/>
+    <script type='text/javascript' src='/js/jquery-mega-drop-down-menu/js/jquery.hoverIntent.minified.js'></script>
+    <script type='text/javascript' src='/js/jquery-mega-drop-down-menu/js/jquery.dcmegamenu.1.3.3.js'></script>
+    <link href="/css/pixie.css" rel="stylesheet" media="screen" type="text/css"/>
+    <link href="/css/uc.css" rel="stylesheet" media="screen" type="text/css"/>
+    <link href="/css/t_tab.css" rel="stylesheet" media="screen" type="text/css"/>
+    <link href="/css/jquery-ui-custom.css" rel="stylesheet" media="screen" type="text/css"/>
+    <link rel="stylesheet" href="/css/uploader.css"/>
+    <link rel="stylesheet" href="/css/imgareaselect-default.css"/>
+    <link href="/js/showLoading/css/showLoading.css" rel="stylesheet" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="/verifyMaster/css/verify.css">
+    <script type="text/javascript" src="/js/showLoading/js/jquery.showLoading.js"></script>
+
+    <script type="text/javascript" src="/js/jquery.fancybox-1.3.4/ett/jquery.fancybox-1.3.4.pack.js"></script>
+    <link rel="stylesheet" type="text/css" href="/js/jquery.fancybox-1.3.4/ett/jquery.fancybox-1.3.4.css"
+          media="screen"/>
+    <script type="text/javascript" src="/uploadify/scripts/swfobject.js"></script>
+    <script type="text/javascript" src="/uploadify/scripts/jquery.uploadify.v2.1.0.js"></script>
+    <script type="text/javascript" src="/js/CryptoJS v3.1.2/rollups/aes.js"></script>
+    <script type="text/javascript" src="/js/CryptoJS v3.1.2/components/mode-ecb.js"></script>
+    <script type="text/javascript" src="/js/login.js"></script>
+    <script type="text/javascript" src="/verifyMaster/js/verify.js"></script>
+    <script type="text/javascript">
+        $.fn.extend({
+            cancelBox: function () {
+                $.fancybox.close();
+                return false;
+            }
+        });
+    </script>
+    <script type="text/javascript" src="/js/jquery-ui.min-nopacker.js"></script>
+    <script type="text/javascript" src="/js/jquery.validate.js"></script>
+    <script type="text/javascript" src="/js/jquery.metadata.js"></script>
+    <script type="text/javascript" src="/js/jquery.bgiframe-2.1.2.js"></script>
+    <script type="text/javascript" src="/js/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="/js/jquery.ui.rcarousel.js"></script>
+    <script type="text/javascript" src="/js/jquery.imgareaselect.min.js"></script>
+    <script type="text/javascript" src="/js/t_tab.js"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="layout" content="main"/>
+    <link href="/css/main.css" rel="stylesheet"
+          media="screen" type="text/css"/>
+
+    <r:layoutResources></r:layoutResources>
+</head>
+<body>
+<div class="wrap">
+    <div class="mw newheader">
+        <div style="float:right;padding:10px;color:#FFFFFF;font-size:14px;font-family:Arial,sans-serif;">
+
+            <a href="/user/login">登录</a>&nbsp;&nbsp;<a href="/user/regist">免费注册</a>
+
+        </div>
+    </div>
+
+    <div class="white" style="z-index: 999;">
+        <ul id="mega-menu-9" class="mega-menu" style="z-index: 999;">
+            <li><a href="/" class="">首页</a></li>
+            <li><a href="/webinfo/list?type=1" class="" =="webInfo">热点关注</a>
+                <ul>
+                    <li><a href="/webinfo/list?type=1">热点推荐</a></li>
+                    <li><a href="/webinfo/list?type=2">热点新闻</a></li>
+                </ul>
+            </li>
+            <li><a href="/flaw/list.htm">漏洞列表</a>
+                <ul>
+                    <li><a href="javascript:void(0);">应用漏洞</a>
+                        <ul>
+
+                            <li><a href="/flaw/typelist?typeId=27">操作系统</a></li>
+
+                            <li><a href="/flaw/typelist?typeId=28">应用程序</a></li>
+
+                            <li><a href="/flaw/typelist?typeId=29">WEB应用</a></li>
+
+                            <li><a href="/flaw/typelist?typeId=30">数据库</a></li>
+
+                            <li><a href="/flaw/typelist?typeId=31">网络设备（交换机、路由器等网络端设备）</a></li>
+
+                            <li><a href="/flaw/typelist?typeId=32">安全产品</a></li>
+
+                            <li><a href="/flaw/typelist?typeId=33">智能设备（物联网终端设备）</a></li>
+
+                            <li><a href="/flaw/typelist?typeId=34">区块链公链</a></li>
+
+                            <li><a href="/flaw/typelist?typeId=35">区块链联盟链</a></li>
+
+                            <li><a href="/flaw/typelist?typeId=36">区块链外围系统</a></li>
+
+                            <li><a href="/flaw/typelist?typeId=37">车联网</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);">行业漏洞</a>
+                        <ul>
+
+
+                            <li>
+
+                                <a href="https://telecom.cnvd.org.cn/" target="_blank">
+                                    电信
+                                </a>
+                            </li>
+
+                            <li>
+
+                                <a href="https://mi.cnvd.org.cn/" target="_blank">
+                                    移动互联网
+                                </a>
+                            </li>
+
+                            <li>
+
+                                <a href="https://ics.cnvd.org.cn/" target="_blank">
+                                    工控系统
+                                </a>
+                            </li>
+
+                            <li>
+
+                                <a href="https://bc.cnvd.org.cn/" target="_blank">
+                                    区块链
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="/patchInfo/list">补丁信息</a></li>
+            <li><a href="/webinfo/list?type=14">安全公告</a></li>
+            <li><a href="javascript:void(0);">统计查询</a>
+                <ul>
+                    <li><a href="/flaw/statistic">统计数据</a></li>
+                    <li><a href="/flaw/list.htm?flag=ture">高级搜索</a></li>
+                    <li><a href="/shareData/list">共享数据</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0);">研究报告</a>
+                <ul>
+                    <li><a href="/webinfo/list?type=4">周报</a></li>
+                    <li><a href="/webinfo/list?type=5">月报</a></li>
+                    <li><a href="/webinfo/list?type=6">知识库</a></li>
+                </ul>
+            </li>
+            <li><a href="#">工作体系</a>
+                <ul>
+                    <li><a href="/webinfo/list?type=7">CNVD简介</a></li>
+                    <li><a href="/webinfo/list?type=15">加入CNVD</a></li>
+                    <li><a href="/webinfo/list?type=16">CNVD奖励计划</a></li>
+                    <li><a href="/webinfo/list?type=12">CNVD秘书处</a></li>
+                    <li><a href="/webinfo/list?type=10">CNVD技术组</a></li>
+                    <li><a href="/webinfo/list?type=11">CNVD用户组</a></li>
+                    <li><a href="/webinfo/list?type=13">CNVD合作方</a></li>
+                    <!--
+                    <li><a href="/user/userList">白帽子</a></li>
+                    -->
+                </ul>
+            </li>
+            <li><a href="/sheepWall/list"> 绵羊墙</a>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        $().ready(function () {
+            $('#mega-menu-9').dcMegaMenu({
+                rowItems: '3',
+                speed: 'fast',
+                effect: 'fade'
+            });
+        });
+    </script>
+
+</div>
+<script type="text/javascript">
+    $('#mega-menu-9').dcMegaMenu({
+        rowItems: '3',
+        speed: 'fast',
+        effect: 'fade'
+    });
+</script>
+<div class="top_btn" style="display:none;">
+    <a class="topLink" href="javascript:void(0);" title="回到顶部"></a>
+</div>
+
+<div class="mw path">
+    当前位置：<a href="/">首页</a> &gt; 漏洞列表
+</div>
+
+<!-- 主体内容开始 -->
+<div class="mw Main clearfix">
+    <div class="blkContainer">
+
+        <div class="blkContainerPblk">
+            <form action="/flaw/list.htm?flag=true" method="post" id="searchForm">
+                <div style="padding: 10px;">
+                    <div id="searchDiv">
+                        编号：
+                        <input type="text" name="number" value="请输入精确编号"
+                               onFocus="javascript:if(this.value=='请输入精确编号'){this.value=''}"
+                               onBlur="javascript:if(this.value==''){this.value = '请输入精确编号'}" id="number"/>
+                        开始时间：
+                        <input type="text" name="startDate" value="" readonly="readonly" id="startDate"/>
+                        结束时间：
+                        <input type="text" name="endDate" value="" readonly="readonly" id="endDate"/>
+                        <input type="hidden" id="field" name="field" value=""/>
+                        <input type="hidden" id="order" name="order" value=""/>
+
+                    </div>
+                    <div class="sp15"></div>
+                    <div id="flawDialog" class="adv" title="高级搜索"
+                         style="display: none;">
+                        <div id="dialogContent"></div>
+                    </div>
+
+                    <input type="button" value="高级搜索" style="float: right;" id="highLevelSearch"
+                           onclick="showDialog()"/>
+                    <input type="button" onclick="formSubmit();" style="float: right;margin-right: 13px;" value="提交"/>
+                    <div style="clear: both;"></div>
+                </div>
+            </form>
+            <div>
+                <table class="tlist">
+                    <thead>
+                    <tr>
+                        <th width="45%">漏洞标题</th>
+                        <th style="text-align: center;" width="13%"><a
+                                href="javascript:" title="点击可排序" style="color: #333;"
+                                id="level" onclick="changeOrder(this.id)">危害级别</a></th>
+                        <th style="text-align: center;" width="11%"><a
+                                href="javascript:" title="点击可排序" style="color: #333;"
+                                id="clickNum" onclick="changeOrder(this.id)">点击数</a></th>
+                        <th style="text-align: center;" width="9%"><a
+                                href="javascript:" title="点击可排序" style="color: #333;"
+                                id="comment" onclick="changeOrder(this.id)">评论</a></th>
+                        <th style="text-align: center;" width="9%"><a
+                                href="javascript:" title="点击可排序" style="color: #333;"
+                                id="concern" onclick="changeOrder(this.id)">关注</a></th>
+                        <th style="text-align: center;" width="13%"><a
+                                href="javascript:" title="点击可排序" style="color: #333;" id="time"
+                                onclick="changeOrder(this.id)">时间↓</a></th>
+                    </tr>
+                    </thead>
+                    <div id="flawList">
+                        <tbody>
+
+
+                        <tr class="current">
+                            <td width="45%"><img
+                                    src="/images/wrang_con.gif"></img> <a
+                                    href="/flaw/show/CNVD-2020-54472"
+                                    title="Google TensorFlow输入验证错误漏洞（CNVD-2020-54472）">
+                                Google TensorFlow输入验证错误漏洞（CNVD-...
+
+                            </a></td>
+                            <td class="denle" width="13%" style="text-align: center;">
+
+
+                                <span class="red"></span>
+
+                                高
+
+                            </td>
+                            <td width="11%" style="text-align: center;">
+                                4
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="13%">
+                                2020-09-29
+                            </td>
+                        </tr>
+
+                        <tr class="">
+                            <td width="45%"><img
+                                    src="/images/wrang_con.gif"></img> <a
+                                    href="/flaw/show/CNVD-2020-54473"
+                                    title="Google TensorFlow代码问题漏洞（CNVD-2020-54473）">
+                                Google TensorFlow代码问题漏洞（CNVD-2020...
+
+                            </a></td>
+                            <td class="denle" width="13%" style="text-align: center;">
+
+
+                                <span class="yellow"></span>
+
+                                中
+
+                            </td>
+                            <td width="11%" style="text-align: center;">
+                                2
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="13%">
+                                2020-09-29
+                            </td>
+                        </tr>
+
+                        <tr class="current">
+                            <td width="45%"><img
+                                    src="/images/wrang_con.gif"></img> <a
+                                    href="/flaw/show/CNVD-2020-54474"
+                                    title="Google TensorFlow输入验证错误漏洞">
+                                Google TensorFlow输入验证错误漏洞
+
+                            </a></td>
+                            <td class="denle" width="13%" style="text-align: center;">
+
+
+                                <span class="red"></span>
+
+                                高
+
+                            </td>
+                            <td width="11%" style="text-align: center;">
+                                2
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="13%">
+                                2020-09-29
+                            </td>
+                        </tr>
+
+                        <tr class="">
+                            <td width="45%"><img
+                                    src="/images/wrang_con.gif"></img> <a
+                                    href="/flaw/show/CNVD-2020-54655"
+                                    title="Google TensorFlow缓冲区溢出漏洞（CNVD-2020-54655）">
+                                Google TensorFlow缓冲区溢出漏洞（CNVD-20...
+
+                            </a></td>
+                            <td class="denle" width="13%" style="text-align: center;">
+
+
+                                <span class="yellow"></span>
+
+                                中
+
+                            </td>
+                            <td width="11%" style="text-align: center;">
+                                2
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="13%">
+                                2020-09-29
+                            </td>
+                        </tr>
+
+                        <tr class="current">
+                            <td width="45%"><img
+                                    src="/images/wrang_con.gif"></img> <a
+                                    href="/flaw/show/CNVD-2020-54656"
+                                    title="Google TensorFlow缓冲区溢出漏洞（CNVD-2020-54656）">
+                                Google TensorFlow缓冲区溢出漏洞（CNVD-20...
+
+                            </a></td>
+                            <td class="denle" width="13%" style="text-align: center;">
+
+
+                                <span class="yellow"></span>
+
+                                中
+
+                            </td>
+                            <td width="11%" style="text-align: center;">
+                                2
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="13%">
+                                2020-09-29
+                            </td>
+                        </tr>
+
+                        <tr class="">
+                            <td width="45%"><img
+                                    src="/images/wrang_con.gif"></img> <a
+                                    href="/flaw/show/CNVD-2020-54671"
+                                    title="Google Android Accessibility信息泄露漏洞">
+                                Google Android Accessibility信息泄露漏洞
+
+                            </a></td>
+                            <td class="denle" width="13%" style="text-align: center;">
+
+
+                                <span class="green"></span>
+
+                                低
+
+                            </td>
+                            <td width="11%" style="text-align: center;">
+                                2
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="13%">
+                                2020-09-29
+                            </td>
+                        </tr>
+
+                        <tr class="current">
+                            <td width="45%"><img
+                                    src="/images/wrang_con.gif"></img> <a
+                                    href="/flaw/show/CNVD-2020-54672"
+                                    title="Google Android Auto Settings信息泄露漏洞">
+                                Google Android Auto Settings信息泄露漏洞
+
+                            </a></td>
+                            <td class="denle" width="13%" style="text-align: center;">
+
+
+                                <span class="green"></span>
+
+                                低
+
+                            </td>
+                            <td width="11%" style="text-align: center;">
+                                2
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="13%">
+                                2020-09-29
+                            </td>
+                        </tr>
+
+                        <tr class="">
+                            <td width="45%"><img
+                                    src="/images/wrang_con.gif"></img> <a
+                                    href="/flaw/show/CNVD-2020-54673"
+                                    title="Google Android libstagefright输入验证错误漏洞">
+                                Google Android libstagefright输入验证错误...
+
+                            </a></td>
+                            <td class="denle" width="13%" style="text-align: center;">
+
+
+                                <span class="yellow"></span>
+
+                                中
+
+                            </td>
+                            <td width="11%" style="text-align: center;">
+                                2
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="13%">
+                                2020-09-29
+                            </td>
+                        </tr>
+
+                        <tr class="current">
+                            <td width="45%"><img
+                                    src="/images/wrang_con.gif"></img> <a
+                                    href="/flaw/show/CNVD-2020-54674"
+                                    title="Google Android MediaProvider权限控制漏洞">
+                                Google Android MediaProvider权限控制漏洞
+
+                            </a></td>
+                            <td class="denle" width="13%" style="text-align: center;">
+
+
+                                <span class="red"></span>
+
+                                高
+
+                            </td>
+                            <td width="11%" style="text-align: center;">
+                                2
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="13%">
+                                2020-09-29
+                            </td>
+                        </tr>
+
+                        <tr class="">
+                            <td width="45%"><img
+                                    src="/images/wrang_con.gif"></img> <a
+                                    href="/flaw/show/CNVD-2020-54675"
+                                    title="Google Android WindowManager提权漏洞">
+                                Google Android WindowManager提权漏洞
+
+                            </a></td>
+                            <td class="denle" width="13%" style="text-align: center;">
+
+
+                                <span class="red"></span>
+
+                                高
+
+                            </td>
+                            <td width="11%" style="text-align: center;">
+                                2
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="13%">
+                                2020-09-29
+                            </td>
+                        </tr>
+
+                        <tr class="current">
+                            <td width="45%"><img
+                                    src="/images/wrang_con.gif"></img> <a
+                                    href="/flaw/show/CNVD-2020-53551"
+                                    title="天融信终端威胁防御系统存在权限提升漏洞">
+                                天融信终端威胁防御系统存在权限提升漏洞
+
+                            </a></td>
+                            <td class="denle" width="13%" style="text-align: center;">
+
+
+                                <span class="green"></span>
+
+                                低
+
+                            </td>
+                            <td width="11%" style="text-align: center;">
+                                7
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="13%">
+                                2020-09-29
+                            </td>
+                        </tr>
+
+                        <tr class="">
+                            <td width="45%"><img
+                                    src="/images/wrang_con.gif"></img> <a
+                                    href="/flaw/show/CNVD-2020-53550"
+                                    title="赛博网游加速器存在本地提权漏洞">
+                                赛博网游加速器存在本地提权漏洞
+
+                            </a></td>
+                            <td class="denle" width="13%" style="text-align: center;">
+
+
+                                <span class="red"></span>
+
+                                高
+
+                            </td>
+                            <td width="11%" style="text-align: center;">
+                                6
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="13%">
+                                2020-09-29
+                            </td>
+                        </tr>
+
+                        <tr class="current">
+                            <td width="45%"><img
+                                    src="/images/wrang_con.gif"></img> <a
+                                    href="/flaw/show/CNVD-2020-48244"
+                                    title="安徽希望网络科技有限公司建站系统存在SQL注入漏洞（CNVD-2020-48244）">
+                                安徽希望网络科技有限公司建站系统存在SQL注...
+
+                            </a></td>
+                            <td class="denle" width="13%" style="text-align: center;">
+
+
+                                <span class="red"></span>
+
+                                高
+
+                            </td>
+                            <td width="11%" style="text-align: center;">
+                                3
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="13%">
+                                2020-09-29
+                            </td>
+                        </tr>
+
+                        <tr class="">
+                            <td width="45%"><img
+                                    src="/images/wrang_con.gif"></img> <a
+                                    href="/flaw/show/CNVD-2020-54481"
+                                    title="Artifex Software Artifex MuJS存在未明漏洞">
+                                Artifex Software Artifex MuJS存在未明漏洞...
+
+                            </a></td>
+                            <td class="denle" width="13%" style="text-align: center;">
+
+
+                                <span class="red"></span>
+
+                                高
+
+                            </td>
+                            <td width="11%" style="text-align: center;">
+                                2
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="13%">
+                                2020-09-29
+                            </td>
+                        </tr>
+
+                        <tr class="current">
+                            <td width="45%"><img
+                                    src="/images/wrang_con.gif"></img> <a
+                                    href="/flaw/show/CNVD-2020-54483"
+                                    title="Artifex Software MuJS资源管理错误漏洞">
+                                Artifex Software MuJS资源管理错误漏洞
+
+                            </a></td>
+                            <td class="denle" width="13%" style="text-align: center;">
+
+
+                                <span class="yellow"></span>
+
+                                中
+
+                            </td>
+                            <td width="11%" style="text-align: center;">
+                                2
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="13%">
+                                2020-09-29
+                            </td>
+                        </tr>
+
+                        <tr class="">
+                            <td width="45%"><img
+                                    src="/images/wrang_con.gif"></img> <a
+                                    href="/flaw/show/CNVD-2020-54489"
+                                    title="Artifex Software Ghostscript存在未明漏洞">
+                                Artifex Software Ghostscript存在未明漏洞
+
+                            </a></td>
+                            <td class="denle" width="13%" style="text-align: center;">
+
+
+                                <span class="yellow"></span>
+
+                                中
+
+                            </td>
+                            <td width="11%" style="text-align: center;">
+                                2
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="13%">
+                                2020-09-29
+                            </td>
+                        </tr>
+
+                        <tr class="current">
+                            <td width="45%"><img
+                                    src="/images/wrang_con.gif"></img> <a
+                                    href="/flaw/show/CNVD-2020-54475"
+                                    title="Artifex Ghostscript拒绝服务漏洞（CNVD-2020-54475）">
+                                Artifex Ghostscript拒绝服务漏洞（CNVD-20...
+
+                            </a></td>
+                            <td class="denle" width="13%" style="text-align: center;">
+
+
+                                <span class="yellow"></span>
+
+                                中
+
+                            </td>
+                            <td width="11%" style="text-align: center;">
+                                2
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="13%">
+                                2020-09-29
+                            </td>
+                        </tr>
+
+                        <tr class="">
+                            <td width="45%"><img
+                                    src="/images/wrang_con.gif"></img> <a
+                                    href="/flaw/show/CNVD-2020-54476"
+                                    title="Artifex Ghostscript拒绝服务漏洞（CNVD-2020-54476）">
+                                Artifex Ghostscript拒绝服务漏洞（CNVD-20...
+
+                            </a></td>
+                            <td class="denle" width="13%" style="text-align: center;">
+
+
+                                <span class="yellow"></span>
+
+                                中
+
+                            </td>
+                            <td width="11%" style="text-align: center;">
+                                2
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="13%">
+                                2020-09-29
+                            </td>
+                        </tr>
+
+                        <tr class="current">
+                            <td width="45%"><img
+                                    src="/images/wrang_con.gif"></img> <a
+                                    href="/flaw/show/CNVD-2020-54477"
+                                    title="Artifex Ghostscript代码执行漏洞">
+                                Artifex Ghostscript代码执行漏洞
+
+                            </a></td>
+                            <td class="denle" width="13%" style="text-align: center;">
+
+
+                                <span class="red"></span>
+
+                                高
+
+                            </td>
+                            <td width="11%" style="text-align: center;">
+                                2
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="13%">
+                                2020-09-29
+                            </td>
+                        </tr>
+
+                        <tr class="">
+                            <td width="45%"><img
+                                    src="/images/wrang_con.gif"></img> <a
+                                    href="/flaw/show/CNVD-2020-54478"
+                                    title="Artifex Ghostscript拒绝服务漏洞（CNVD-2020-54478）">
+                                Artifex Ghostscript拒绝服务漏洞（CNVD-20...
+
+                            </a></td>
+                            <td class="denle" width="13%" style="text-align: center;">
+
+
+                                <span class="yellow"></span>
+
+                                中
+
+                            </td>
+                            <td width="11%" style="text-align: center;">
+                                2
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="9%" style="text-align: center;">
+                                0
+                            </td>
+                            <td width="13%">
+                                2020-09-29
+                            </td>
+                        </tr>
+
+
+                        </tbody>
+                    </div>
+                </table>
+                <div class="pages clearfix">
+                    <span class="currentStep">1</span><a href="/flaw/list.htm?max=20&amp;offset=20" class="step">2</a><a
+                        href="/flaw/list.htm?max=20&amp;offset=40" class="step">3</a><a
+                        href="/flaw/list.htm?max=20&amp;offset=60" class="step">4</a><a
+                        href="/flaw/list.htm?max=20&amp;offset=80" class="step">5</a><a
+                        href="/flaw/list.htm?max=20&amp;offset=100" class="step">6</a><a
+                        href="/flaw/list.htm?max=20&amp;offset=120" class="step">7</a><a
+                        href="/flaw/list.htm?max=20&amp;offset=140" class="step">8</a><a
+                        href="/flaw/list.htm?max=20&amp;offset=160" class="step">9</a><a
+                        href="/flaw/list.htm?max=20&amp;offset=180" class="step">10</a><span class="step">..</span><a
+                        href="/flaw/list.htm?max=20&amp;offset=148500" class="step">7426</a><a
+                        href="/flaw/list.htm?max=20&amp;offset=20" class="nextLink">Next</a>
+                    <span>共&nbsp;148510&nbsp;条
+						</span>
+                </div>
+            </div>
+
+            <div class="content_line"></div>
+        </div>
+    </div>
+    <div class="sidebar">
+
+
+        <div class="blk_01">
+            <div class="bc clearfix">
+                <div class="tit tit_02">
+                    <h2>热点漏洞</h2>
+                </div>
+                <ul class="cc_list_01">
+
+                    <li><a href="/flaw/show/CNVD-2020-29889" title="PIVX 资源管理存在逻辑缺陷漏洞">
+
+                        PIVX 资源管理存在逻辑缺陷漏洞
+
+                    </a></li>
+
+                    <li><a href="/flaw/show/CNVD-2020-30008" title="Internet Node Token存在逻辑缺陷漏洞">
+
+                        Internet Node Token存在逻辑缺陷漏洞
+
+                    </a></li>
+
+                    <li><a href="/flaw/show/CNVD-2020-29888" title="Phore 资源管理错误漏洞">
+
+                        Phore 资源管理错误漏洞
+
+                    </a></li>
+
+                    <li><a href="/flaw/show/CNVD-2020-29890" title="NavCoin 资源管理存在逻辑缺陷漏洞">
+
+                        NavCoin 资源管理存在逻辑缺陷漏洞
+
+                    </a></li>
+
+                    <li><a href="/flaw/show/CNVD-2020-30011" title="PolyAI存在逻辑缺陷漏洞">
+
+                        PolyAI存在逻辑缺陷漏洞
+
+                    </a></li>
+
+                    <li><a href="/flaw/show/CNVD-2020-30026" title="FuturXE存在逻辑缺陷漏洞">
+
+                        FuturXE存在逻辑缺陷漏洞
+
+                    </a></li>
+
+                    <li><a href="/flaw/show/CNVD-2020-29963" title="DYchain存在逻辑缺陷漏洞">
+
+                        DYchain存在逻辑缺陷漏洞
+
+                    </a></li>
+
+                    <li><a href="/flaw/show/CNVD-2020-29968" title="CPP-Ethereum JSON-RPC存在逻辑缺陷漏洞">
+
+                        CPP-Ethereum JSON-RPC存在逻辑缺陷漏洞
+
+                    </a></li>
+
+                    <li><a href="/flaw/show/CNVD-2020-29969" title="CPP-Ethereum JSON-RPC存在逻辑缺陷漏洞">
+
+                        CPP-Ethereum JSON-RPC存在逻辑缺陷漏洞
+
+                    </a></li>
+
+                    <li><a href="/flaw/show/CNVD-2020-29976" title="BTC 公链日志注入漏洞">
+
+                        BTC 公链日志注入漏洞
+
+                    </a></li>
+
+                </ul>
+            </div>
+        </div>
+        <!--
+        <div class="sp15"></div>
+        <div class="blk_01">
+            <div class="bc clearfix">
+                <div class="weibo" style="float:left;padding:11px 11px 15px;">
+                    <div class="clf">
+                        <h4 class="clf"><i></i>国家信息安全漏洞共享平台官方微博</h4>
+                        <div class="t_sina"><a href="javascript:void(0);">关注官方新浪微博</a></div>
+                        <div class="t_qq"><a href="javascript:void(0);">关注官方腾讯微博</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         -->
+        <div class="sp15"></div>
+        <div class="blk_01">
+            <div class="bc clearfix">
+                <div class="weibo" style="float:left;padding:11px 0 5px;">
+                    <div class="clf">
+                        <a href="/flaw/create">
+                            <img style="border:medium none;" height="70" width="320" alt="漏洞报送"
+                                 src="/images/loudongbaosong.jpg"/>
+                        </a>
+                    </div>
+                    <div class="sp15"></div>
+                    <div class="clf">
+                        <a href="/certificate/certificate_search">
+                            <img style="border:medium none;" height="70" width="320" alt="证书查询"
+                                 src="/images/zhengshuchaxun.jpg"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- 主体内容结束 -->
+<script type="text/javascript">
+    $(function () {
+        $(".pages .step,.pages .nextLink,.pages .prevLink").click(function () {
+
+
+            var str = $(this).attr("href");
+            str = str.substring(str.indexOf('?') + 1);
+            var strs = str.split('&');
+            var html = '';
+            for (var s in strs) {
+
+                var nameAndValue = strs[s];
+                var name = nameAndValue.substring(0, nameAndValue.indexOf('='));
+                var value = nameAndValue.substring(nameAndValue.indexOf('=') + 1);
+
+                if ((name == 'startDate' || name == 'endDate' || name == "number")) {
+                    continue;
+                }
+                if ($("input[name=\"" + name + "\"]")) {
+                    $("input[name=\"" + name + "\"]").remove();
+                }
+                html += '<input type="hidden" name=' + name + ' value=' + decodeURIComponent(value) + '>';
+            }
+
+            $("#searchDiv").append(html);
+
+            $("#searchForm").submit();
+            return false;
+        });
+
+        var kwd = "";
+        if (kwd) {
+            var paraStr = "&kwd=" + encodeURIComponent(kwd);
+            //postAjax(paraStr);
+        } else {
+            //formSubmit();
+        }
+
+        $.datepicker.regional['zh-CN'] = {
+            dayNamesMin: ['日', '一', '二', '三', '四', '五', '六'],
+            monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+            monthNamesShort: ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'],
+            nextText: '', //intentionally blank
+            prevText: '', //intentionally blank
+            numberOfMonths: 1,
+            stepMonths: 1,
+            showButtonPanel: false,
+            //closeText: Translations.clear_dates,
+            //currentText: Translations.today
+            closeText: '清除已选日期',
+            dateFormat: 'yy-mm-dd',
+            currentText: '今天'
+        };
+        $.datepicker.setDefaults($.datepicker.regional['zh-CN']);
+        $('#startDate').datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+        $('#endDate').datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+
+        $("#flawDialog").dialog({
+            autoOpen: false,
+            height: 600,
+            width: 750,
+            modal: true,
+            buttons: {
+                "取消": function () {
+                    $(this).dialog("close");
+                },
+                "搜索": function () {
+                    var conditionValue = $("input[type=radio][name=condition]:checked").val();
+                    var causeElems = $("input[type=checkbox][name=cause]:checked");
+                    var threadElems = $("input[type=checkbox][name=thread]:checked");
+                    var serverityElems = $("input[type=checkbox][name=serverity]:checked");
+                    var positionElems = $("input[type=checkbox][name=position]:checked");
+                    var causeIdStr = '';
+                    var threadIdStr = '';
+                    var serverityIdStr = '';
+                    var positionIdStr = '';
+                    causeElems.each(function () {
+                        causeIdStr += this.value + ",";
+                    });
+                    $("#causeIdStr").val(causeIdStr);
+                    threadElems.each(function () {
+                        threadIdStr += this.value + ",";
+                    });
+                    $("#threadIdStr").val(threadIdStr);
+                    serverityElems.each(function () {
+                        serverityIdStr += this.value + ",";
+                    });
+                    $("#serverityIdStr").val(serverityIdStr);
+                    positionElems.each(function () {
+                        positionIdStr += this.value + ",";
+                    });
+                    $("#positionIdStr").val(positionIdStr);
+                    $(this).dialog("close");
+                    var namelist = $("div[id=flawDialog] *[name]:not(input[type=radio]):not(input[type=checkbox])");
+                    var paraStr = "?condition=" + conditionValue + "&causeIdStr=" + causeIdStr + "&threadIdStr=" + threadIdStr + "&serverityIdStr=" + serverityIdStr + "&positionIdStr=" + positionIdStr;
+                    namelist.each(function () {
+                        var name = $(this).attr("name");
+                        var value = $(this).val();
+                        paraStr += "&" + name + "=" + encodeURIComponent($.trim(value));
+                    })
+                    //postBlank(paraStr);
+                    $("#searchForm2").submit();
+                }
+            }
+        });
+        var flag = "";
+        if (flag) {
+            //$("#highLevelSearch").click();
+        }
+        $("#dialogContent").load("/flaw/dialog", function () {
+            $(".startWord").click(function () {
+                $(".startWord").css('color', 'blue');
+                $(this).css('color', 'red');
+                var startWord = $(this).text();
+                $("#categorySelect").html("<option selected='selected' value='-1'>请选择产品</option>");
+                $("#editionSelect").html("<option selected='selected' value='-1'>请选择版本</option>");
+                $.ajax({
+                    type: 'post',
+                    dataType: 'json',
+                    url: '/manufacturer/manufacturerListByStartWord',
+                    data: 'startWord=' + startWord,
+                    success: function (data) {
+                        var html = "<option selected='selected' value='-1'>请选择厂商</option>";
+                        $.each(data, function (index, manufacturer) {
+                            if (manufacturer.name.length > 80) {
+                                html += "<option title='" + manufacturer.name + "' value= '" + manufacturer.id + "'>" + manufacturer.name.substring(0, 75) + "...</option>"
+                            } else {
+                                html += "<option title='" + manufacturer.name + "' value= '" + manufacturer.id + "'>" + manufacturer.name + "</option>"
+                            }
+                        });
+                        $("#manufacturerSelect").html('').append(html);
+                    }
+                });
+            });
+            $(".pcstartWord").click(function () {
+                var manuId = $("#").val();
+                if (manuId == "-1") {
+                    alert("请选择厂商");
+                    return false;
+                }
+                $(".pcstartWord").css('color', 'blue');
+                $(this).css('color', 'red');
+                var startWord = $(this).text();
+                $("#editionSelect").html("<option selected='selected' value='-1'>请选择版本</option>");
+                $('#dialogContent').showLoading();
+                $.ajax({
+                    type: 'post',
+                    dataType: 'json',
+                    url: '/manufacturer/categoryListByStartWord',
+                    data: 'startWord=' + startWord + "&manuId=" + manuId,
+                    success: function (data) {
+                        var html = "<option selected='selected' value='-1'>请选择产品</option>";
+                        $.each(data, function (index, category) {
+                            html += "<option value= '" + category.id + "'>" + category.name + "</option>"
+                        });
+                        $("#categorySelect").html('').append(html);
+                        $('#dialogContent').hideLoading();
+                    }
+                });
+            });
+            setTimeout(function () {
+                $("a[class=startWord]:first").trigger("click")
+            }, 2000);
+        });
+    });
+
+    function formSubmit() {
+        $("#searchForm").submit();
+    }
+
+    function postAjax(paraStr) {
+        $('#flawList').showLoading();
+        $.ajax({
+            type: 'post',
+            dataType: 'html',
+            url: '/flaw/listResult2',
+            data: paraStr,
+            success: function (data) {
+                $(".tlist").html('');
+                $("#flawList").html('').append(data);
+                $('#flawList').hideLoading();
+            }
+        });
+    }
+
+    function postBlank(paraStr) {
+        window.open('/flaw/listResult' + paraStr);
+    }
+
+    function showDialog() {
+        $("#flawDialog").dialog("open");
+    }
+
+    function getProductCategory(value) {
+        //alert(value);
+        if (value == '-1') {
+            return false;
+        }
+        $("#editionSelect").html("<option selected='selected' value='-1'>请选择版本</option>");
+        $.ajax({
+            type: 'post',
+            dataType: 'json',
+            url: '/manufacturer/categoryList',
+            data: 'manufacturerId=' + value,
+            success: function (data) {
+                var html = "<option selected='selected' value='-1'>请选择产品</option>";
+                $.each(data, function (index, category) {
+                    html += "<option value= '" + category.id + "'>" + category.name + "</option>"
+                });
+                $("#categorySelect").html('').append(html);
+            }
+        });
+    }
+
+    function getProductManufacturer(startWord) {
+        $("#categorySelect").html("<option selected='selected' value='-1'>请选择产品</option>");
+        $("#editionSelect").html("<option selected='selected' value='-1'>请选择版本</option>");
+        $("#manufacturerSelect").html("<option selected='selected' value='-1'>请选择厂商</option>");
+        $.ajax({
+            type: 'post',
+            dataType: 'json',
+            url: '/manufacturer/manufacturerListByStartWord',
+            data: 'startWord=' + startWord,
+            success: function (data) {
+                var html = "<option selected='selected' value='-1'>请选择厂商</option>";
+                $.each(data, function (index, manufacturer) {
+                    html += "<option style=\"width:460px;\" value= '" + manufacturer.id + "'>" + manufacturer.name + "</option>"
+                });
+                $("#manufacturerSelect").html('').append(html);
+            }
+        });
+    }
+
+    function getProductEdition(value) {
+        if (value == '-1') {
+            return false;
+        }
+        $.ajax({
+            type: 'post',
+            dataType: 'json',
+            url: '/manufacturer/editionList',
+            data: 'categoryId=' + value,
+            success: function (data) {
+                var html = "<option selected='selected' value='-1'>请选择版本</option>";
+                $.each(data, function (index, productInfo) {
+                    html += "<option value= '" + productInfo.edition + "'>" + productInfo.edition + "</option>"
+                });
+                $("#editionSelect").html('').append(html);
+            }
+        });
+    }
+
+    var levelFlag = false; //desc
+    var clickNumFlag = false; //desc
+    var commentFlag = false; //desc
+    var concernFlag = false; //desc
+    var timeFlag = false; //desc
+    function changeOrder(field) {
+        var endFlag = false;
+        var param = $(".pages .currentStep").next().attr("href");
+        if (!param) {
+            param = $(".pages .currentStep").prev().attr("href");
+            endFlag = true;
+        }
+        var index = param.indexOf("?");
+        param = param.substring(index + 1, param.length);
+        var fieldIndex = param.indexOf("field");
+        param = operate(param, endFlag);
+        if (field == "level") {
+            if ($("#order").val() == '' || $("#order").val() == 'desc') {
+                $("#order").val('');
+                $("#order").val('asc');
+            } else {
+                $("#order").val('');
+                $("#order").val('desc');
+            }
+            $("#field").val('');
+            $("#field").val('serverityId');
+            $("#searchForm").submit();
+        } else if (field == "clickNum") {
+            if ($("#order").val() == '' || $("#order").val() == 'desc') {
+                $("#order").val('');
+                $("#order").val('asc');
+            } else {
+                $("#order").val('');
+                $("#order").val('desc');
+            }
+            $("#field").val('');
+            $("#field").val('clickNum');
+            $("#searchForm").submit();
+        } else if (field == "comment") {
+            if ($("#order").val() == '' || $("#order").val() == 'desc') {
+                $("#order").val('');
+                $("#order").val('asc');
+            } else {
+                $("#order").val('');
+                $("#order").val('desc');
+            }
+            $("#field").val('');
+            $("#field").val('commentCount');
+            $("#searchForm").submit();
+
+        } else if (field == "concern") {
+            if ($("#order").val() == '' || $("#order").val() == 'desc') {
+                $("#order").val('');
+                $("#order").val('asc');
+            } else {
+                $("#order").val('');
+                $("#order").val('desc');
+            }
+            $("#field").val('');
+            $("#field").val('concernCount');
+            $("#searchForm").submit();
+        } else if (field == "time") {
+            if ($("#order").val() == '' || $("#order").val() == 'desc') {
+                $("#order").val('');
+                $("#order").val('asc');
+            } else {
+                $("#order").val('');
+                $("#order").val('desc');
+            }
+            $("#field").val('');
+            $("#field").val('openTime');
+            $("#searchForm").submit();
+        }
+    }
+
+    function operate(param, endFlag) {
+        //alert("param="+param);
+        var paramArr = param.split("&");
+        var newParam = "";
+        for (var i = 0; i < paramArr.length; i++) {
+            var arr = paramArr[i].split("=");
+            if (arr[0] == "field") {
+                continue;
+            } else if (arr[0] == "order") {
+                continue;
+            } else if (arr[0] == "offset") {
+                if (endFlag == false) {
+                    newParam += "offset=" + (parseInt(arr[1]) - 20) + "&";
+                }
+                if (endFlag == true) {
+                    newParam += "offset=" + (parseInt(arr[1]) + 20) + "&";
+                }
+            } else {
+                newParam += paramArr[i] + "&";
+            }
+        }
+        //alert("newParam="+newParam);
+        return newParam;
+    }
+</script>
+
+<r:layoutResources></r:layoutResources>
+
+<!-- footer -->
+<style type="text/css">
+    .footer {
+        background-color: #1362bd;
+        margin: 10px auto;
+        padding: 30px 0px;
+        position: relative;
+        width: 1000px;
+        font: 14px Microsoft YaHei;
+        font-weight: 400;
+        color: #FFF;
+    }
+
+    .footer address {
+        font-style: normal;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+    }
+</style>
+<div class="footer">
+    <address>Copyright (c) 2010 国家计算机网络应急技术处理协调中心 版权所有</address>
+    <address>Email：vreport@cert.org.cn 联系电话：010-82991537</address>
+    <address>京ICP备10012421号</address>
+    <address>网站由知道创宇公司加速乐产品提供访问优化服务</address>
+    <address>技术支持：<a href="http://eversec.com.cn/" style="color: white;">恒安嘉新（北京）科技股份公司</a></address>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $(window).scroll(function () {
+            var scrollTop = $(document).scrollTop();
+            if (scrollTop > 0) {
+                $(".top_btn").show();
+            } else {
+                $(".top_btn").hide();
+            }
+        });
+        $(".topLink").click(function () {
+            $('body,html').animate({scrollTop: 0}, 1000);
+        });
+    });
+</script>
+<!-- Baidu Button BEGIN
+<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=8&amp;pos=right&amp;uid=6537022" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+var bds_config={"bdTop":195};
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>
+ -->
+</body>
+</html>
